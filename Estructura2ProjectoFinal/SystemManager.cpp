@@ -1,4 +1,6 @@
 #include "SystemManager.hpp"
+#include <cstring>
+#include <iomanip>
 
 bool SystemManager::OpenDisk() {
     filename.open("Disk.io", std::ios::in | std::ios::out | std::ios::binary);
