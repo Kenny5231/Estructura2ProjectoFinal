@@ -30,7 +30,7 @@ bool SystemManager::OpenDisk() {
 }
 
 bool SystemManager::CreateNewDisk(std::size_t i) {
-    // Calcular parámetros
+    // Calcular parametros
     sizeOfBlock=i;
     std::size_t inodosXBloque = sizeOfBlock / sizeof(Inodos);
     std::size_t BloquesTaPTabla = 256 / inodosXBloque;
@@ -47,7 +47,7 @@ bool SystemManager::CreateNewDisk(std::size_t i) {
     super.max_files = 256;
     super.block_count = 256;
     super.used_blocks = 0;
-    super.free_map = std::vector<std::size_t>(256, 0); // Inicializar mapa de bloques libres
+    super.free_map = std::vector<std::size_t>(256, 0); 
 
     // Calcular el tamaño del super bloque
     std::size_t tamañoSuperBloque = sizeof(header) + sizeof(super.block_count) + sizeof(super.block_size) +
@@ -68,14 +68,14 @@ bool SystemManager::CreateNewDisk(std::size_t i) {
     std::vector<Inodos> inodos;
     for (std::size_t i = 0; i < header.TotalInodos; ++i) {
         Inodos tmp;
-        if (i == 0) { // Inodo del super bloque
+        if (i == 0) { 
             std::strncpy(tmp.nombre, "Super Bloque", sizeof(tmp.nombre) - 1);
             tmp.nombre[sizeof(tmp.nombre) - 1] = '\0';
             tmp.tamaño = tamañoSuperBloque;
             tmp.ocupado = true;
             std::fill(std::begin(tmp.bloques_usados), std::end(tmp.bloques_usados), 0);
             for (std::size_t j = 0; j < bloquesSuperBloque && j < 8; ++j) {
-                tmp.bloques_usados[j] = j; // Asignar los bloques ocupados
+                tmp.bloques_usados[j] = j; 
             }
         } else {
             std::fill(std::begin(tmp.nombre), std::end(tmp.nombre), '\0');
@@ -88,7 +88,7 @@ bool SystemManager::CreateNewDisk(std::size_t i) {
 
     // Abrir archivo
     if (filename.is_open()) {
-        filename.close(); // Cerrar si ya estaba abierto
+        filename.close(); 
     }
     filename.open("Disk.io", std::ios::out | std::ios::binary | std::ios::trunc);
     if (!filename.is_open()) {
@@ -99,7 +99,7 @@ bool SystemManager::CreateNewDisk(std::size_t i) {
     // Escribir el header
     filename.write(reinterpret_cast<char*>(&header), sizeof(header));
 
-    // Escribir el superBloque (sin la tabla de inodos, que se escribe después)
+    // Escribir el superBloque 
     filename.write(reinterpret_cast<char*>(&super.block_count), sizeof(super.block_count));
     filename.write(reinterpret_cast<char*>(&super.block_size), sizeof(super.block_size));
     filename.write(reinterpret_cast<char*>(&super.max_files), sizeof(super.max_files));
@@ -136,7 +136,7 @@ bool SystemManager::write(std::string txt, std::string NombreArchivo) {
         return false;
     }
     if(ExisteArchivo(NombreArchivo)){
-    // Verificar si el archivo ya existe
+
     Inodos* inodoExistente = nullptr;
     std::size_t inodoIndex = -1;
     for (std::size_t i = 0; i < superbloque.TablaInodos.size(); ++i) {
@@ -147,11 +147,9 @@ bool SystemManager::write(std::string txt, std::string NombreArchivo) {
         }
     }
 
-    // Dividir el texto en bloques
     std::vector<std::string> bloques = informacionEnBloques(txt);
     std::vector<std::size_t> bloquesUsados;
 
-    // Encontrar bloques libres suficientes
     for (std::size_t i = 0; i < superbloque.free_map.size(); ++i) {
         if (superbloque.free_map[i] == 0 && bloquesUsados.size() < bloques.size()) {
             bloquesUsados.push_back(i);
@@ -162,17 +160,13 @@ bool SystemManager::write(std::string txt, std::string NombreArchivo) {
         std::cerr << "Error: No hay suficientes bloques libres para escribir el archivo.\n";
         return false;
     }
-
-    // Escribir los datos en los bloques libres
     for (std::size_t i = 0; i < bloques.size(); ++i) {
         filename.seekp(header.tamañoBlock * bloquesUsados[i], std::ios::beg);
         filename.write(bloques[i].c_str(), bloques[i].size());
         filename.flush();
     }
 
-    // Actualizar el inodo existente o crear uno nuevo
     if (inodoExistente) {
-        // Agregar los nuevos bloques al inodo existente
         for (std::size_t i = 0; i < bloquesUsados.size(); ++i) {
             for (std::size_t& bloque : inodoExistente->bloques_usados) {
                 if (bloque == 0) {
@@ -216,7 +210,6 @@ bool SystemManager::write(std::string txt, std::string NombreArchivo) {
         }
     }
     
-
     // Marcar los bloques como usados en el mapa de bloques libres
     for (std::size_t bloque : bloquesUsados) {
         superbloque.free_map[bloque] = 1;
@@ -248,8 +241,8 @@ bool SystemManager::ExisteArchivo(std::string NombreArchivo)
 
 std::vector<std::string> SystemManager::informacionEnBloques(std::string txt) {
     std::vector<std::string> vec;
-    std::size_t blockSize = sizeOfBlock; // Tamaño de cada bloque
-    std::size_t totalSize = txt.size(); // Tamaño total del texto
+    std::size_t blockSize = sizeOfBlock; 
+    std::size_t totalSize = txt.size();
     
     for (std::size_t i = 0; i < totalSize; i += blockSize) {
         // Extraer un substring de tamaño blockSize o lo que reste
@@ -264,25 +257,19 @@ std::string SystemManager::showInfoOfDat(std::string archivo) {
         for (std::size_t i = 0; i < superbloque.TablaInodos.size(); ++i) {
             Inodos& inodo = superbloque.TablaInodos[i];
 
-            // Comparar correctamente nombres (usar std::strncmp)
             if (std::strncmp(inodo.nombre, archivo.c_str(), sizeof(inodo.nombre)) == 0) {
-                // Leer datos de cada bloque usado por el inodo
                 for (int j = 0; j < 8; ++j) {
                     if (inodo.bloques_usados[j] == 0) {
-                        // Bloques no usados están marcados como 0
                         continue;
                     }
 
                     std::size_t offset = inodo.bloques_usados[j] * header.tamañoBlock;
 
-                    // Mover el puntero de lectura al bloque correspondiente
                     filename.seekg(offset, std::ios::beg);
 
-                     // Leer el contenido del bloque
                 std::vector<char> buffer(header.tamañoBlock);
                 filename.read(buffer.data(), buffer.size());
 
-                // Verificar si se leyó correctamente
                 if (filename.gcount() > 0) {
                     txt.append(buffer.data(), filename.gcount());
                 } else {
@@ -315,12 +302,11 @@ for (int i = 0; i < superbloque.TablaInodos.size(); i++) {
     Inodos& inodo = superbloque.TablaInodos[i];
     std::string nombreArchivo(inodo.nombre, strnlen(inodo.nombre, sizeof(inodo.nombre)));
     if (nombreArchivo != "Super Bloque") {
-    // Limpiar nombre
+
         for (int j = 0; j < 64; j++) {
             inodo.nombre[j] = '\0';
         }
 
-        // Liberar bloques usados
         for (int j = 0; j < 8; j++) {
         if (inodo.bloques_usados[j] != 0) {
             superbloque.free_map[inodo.bloques_usados[j]] = 0;
@@ -328,10 +314,8 @@ for (int i = 0; i < superbloque.TablaInodos.size(); i++) {
             }
         }
 
-        // Marcar inodo como libre
         inodo.ocupado = false;
 
-        // Escribir cambios al archivo
         if (filename.is_open()) {
             filename.seekp(24);
             filename.write(reinterpret_cast<char*>(&superbloque.block_count), sizeof(superbloque.block_count));
@@ -347,7 +331,7 @@ for (int i = 0; i < superbloque.TablaInodos.size(); i++) {
         
         }
 }
-return true; // Archivo eliminado con éxito        
+return true;      
 }
 
 bool SystemManager::deleteArchivo(std::string txt) {
@@ -434,7 +418,6 @@ bool SystemManager::createnewfile(std::string NombreArchivo)
     }
     
     if(!ExisteArchivo(NombreArchivo)){
-        // Crear un nuevo inodo
         for (std::size_t i = 0; i < superbloque.TablaInodos.size(); ++i) {
             Inodos& inodo = superbloque.TablaInodos[i];
             if (!inodo.ocupado) {

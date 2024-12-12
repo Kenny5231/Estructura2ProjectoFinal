@@ -34,11 +34,9 @@ std::vector<std::string> data(std::string& txt) {
     
     for (char ch : txt) {
         if (ch == '<') {
-            // Comienza una nueva palabra
             dentroDelimitadores = true;
-            palabra = ""; // Reinicia la palabra por si había residuos
+            palabra = ""; 
         } else if (ch == '>') {
-            // Finaliza la palabra y la agrega al vector si es válida
             if (dentroDelimitadores && !palabra.empty()) {
                 vec.push_back(palabra);
             }
@@ -93,14 +91,32 @@ bool iswrite(std::string txt){
 
 int main() {
     SystemManager admin;
-    if(!admin.OpenDisk()){
-        std::size_t i=0;
-        bool es=false;
-        while(!isInteger(i)){
-            std::cout<<"Ingrese el tamaño en bytes de los bloques.\n";
-            std::cin>>i;
+    if(!admin.OpenDisk()){ 
+        /*
+       std::size_t i = 0;
+    bool es_valido = false;
+
+    while (!es_valido || i < 256) {
+        try {
+            std::string entrada;
+            std::cout << "Ingrese el tamaño en bytes de los bloques (máximo 255): ";
+            std::cin >> entrada;
+
+            i = std::stoul(entrada);
+
+            if (i < 256) {
+                std::cout << "El valor debe ser mayor a 255. Inténtelo de nuevo.\n";
+            } else {
+                es_valido = true; 
+            }
+        } catch (const std::invalid_argument&) {
+            std::cout << "Entrada inválida. Por favor, ingrese un número entero.\n";
+        } catch (const std::out_of_range&) {
+            std::cout << "El número ingresado es demasiado grande. Inténtelo de nuevo.\n";
         }
-        if(admin.CreateNewDisk(i)){
+    }
+    */
+        if(admin.CreateNewDisk(1024)){
             std::cout<<"Se creo un nuevo disco virtual.\n";
             admin.OpenDisk();
         }
