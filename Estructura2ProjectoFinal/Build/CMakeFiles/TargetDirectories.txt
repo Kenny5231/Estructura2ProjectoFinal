@@ -1,0 +1,3 @@
+/Users/Kenny/Documents/ProyectoEstru2 2/ProyectoEstru2KennyMenjivarPrimerAvance/SegundaParte/Build/CMakeFiles/SecondPart.dir
+/Users/Kenny/Documents/ProyectoEstru2 2/ProyectoEstru2KennyMenjivarPrimerAvance/SegundaParte/Build/CMakeFiles/edit_cache.dir
+/Users/Kenny/Documents/ProyectoEstru2 2/ProyectoEstru2KennyMenjivarPrimerAvance/SegundaParte/Build/CMakeFiles/rebuild_cache.dir
