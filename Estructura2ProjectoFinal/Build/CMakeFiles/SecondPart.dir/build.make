@@ -53,10 +53,10 @@ RM = /usr/local/Cellar/cmake/3.30.3/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/Users/Kenny/Documents/ProyectoEstru2 2/ProyectoEstru2KennyMenjivarPrimerAvance/SegundaParte"
+CMAKE_SOURCE_DIR = "/Users/Kenny/Documents/ProyectoEstru2 2/ProyectoEstru2KennyMenjivarPrimerAvance/SegundaParte/Estructura2ProjectoFinal/Estructura2ProjectoFinal"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/Users/Kenny/Documents/ProyectoEstru2 2/ProyectoEstru2KennyMenjivarPrimerAvance/SegundaParte/Build"
+CMAKE_BINARY_DIR = "/Users/Kenny/Documents/ProyectoEstru2 2/ProyectoEstru2KennyMenjivarPrimerAvance/SegundaParte/Estructura2ProjectoFinal/Estructura2ProjectoFinal/build"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/SecondPart.dir/depend.make
@@ -70,32 +70,32 @@ include CMakeFiles/SecondPart.dir/progress.make
 include CMakeFiles/SecondPart.dir/flags.make
 
 CMakeFiles/SecondPart.dir/Main.cpp.o: CMakeFiles/SecondPart.dir/flags.make
-CMakeFiles/SecondPart.dir/Main.cpp.o: /Users/Kenny/Documents/ProyectoEstru2\ 2/ProyectoEstru2KennyMenjivarPrimerAvance/SegundaParte/Main.cpp
+CMakeFiles/SecondPart.dir/Main.cpp.o: /Users/Kenny/Documents/ProyectoEstru2\ 2/ProyectoEstru2KennyMenjivarPrimerAvance/SegundaParte/Estructura2ProjectoFinal/Estructura2ProjectoFinal/Main.cpp
 CMakeFiles/SecondPart.dir/Main.cpp.o: CMakeFiles/SecondPart.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/Kenny/Documents/ProyectoEstru2 2/ProyectoEstru2KennyMenjivarPrimerAvance/SegundaParte/Build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/SecondPart.dir/Main.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SecondPart.dir/Main.cpp.o -MF CMakeFiles/SecondPart.dir/Main.cpp.o.d -o CMakeFiles/SecondPart.dir/Main.cpp.o -c "/Users/Kenny/Documents/ProyectoEstru2 2/ProyectoEstru2KennyMenjivarPrimerAvance/SegundaParte/Main.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/Kenny/Documents/ProyectoEstru2 2/ProyectoEstru2KennyMenjivarPrimerAvance/SegundaParte/Estructura2ProjectoFinal/Estructura2ProjectoFinal/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/SecondPart.dir/Main.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SecondPart.dir/Main.cpp.o -MF CMakeFiles/SecondPart.dir/Main.cpp.o.d -o CMakeFiles/SecondPart.dir/Main.cpp.o -c "/Users/Kenny/Documents/ProyectoEstru2 2/ProyectoEstru2KennyMenjivarPrimerAvance/SegundaParte/Estructura2ProjectoFinal/Estructura2ProjectoFinal/Main.cpp"
 
 CMakeFiles/SecondPart.dir/Main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SecondPart.dir/Main.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Kenny/Documents/ProyectoEstru2 2/ProyectoEstru2KennyMenjivarPrimerAvance/SegundaParte/Main.cpp" > CMakeFiles/SecondPart.dir/Main.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Kenny/Documents/ProyectoEstru2 2/ProyectoEstru2KennyMenjivarPrimerAvance/SegundaParte/Estructura2ProjectoFinal/Estructura2ProjectoFinal/Main.cpp" > CMakeFiles/SecondPart.dir/Main.cpp.i
 
 CMakeFiles/SecondPart.dir/Main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SecondPart.dir/Main.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Kenny/Documents/ProyectoEstru2 2/ProyectoEstru2KennyMenjivarPrimerAvance/SegundaParte/Main.cpp" -o CMakeFiles/SecondPart.dir/Main.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Kenny/Documents/ProyectoEstru2 2/ProyectoEstru2KennyMenjivarPrimerAvance/SegundaParte/Estructura2ProjectoFinal/Estructura2ProjectoFinal/Main.cpp" -o CMakeFiles/SecondPart.dir/Main.cpp.s
 
 CMakeFiles/SecondPart.dir/SystemManager.cpp.o: CMakeFiles/SecondPart.dir/flags.make
-CMakeFiles/SecondPart.dir/SystemManager.cpp.o: /Users/Kenny/Documents/ProyectoEstru2\ 2/ProyectoEstru2KennyMenjivarPrimerAvance/SegundaParte/SystemManager.cpp
+CMakeFiles/SecondPart.dir/SystemManager.cpp.o: /Users/Kenny/Documents/ProyectoEstru2\ 2/ProyectoEstru2KennyMenjivarPrimerAvance/SegundaParte/Estructura2ProjectoFinal/Estructura2ProjectoFinal/SystemManager.cpp
 CMakeFiles/SecondPart.dir/SystemManager.cpp.o: CMakeFiles/SecondPart.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/Kenny/Documents/ProyectoEstru2 2/ProyectoEstru2KennyMenjivarPrimerAvance/SegundaParte/Build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/SecondPart.dir/SystemManager.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SecondPart.dir/SystemManager.cpp.o -MF CMakeFiles/SecondPart.dir/SystemManager.cpp.o.d -o CMakeFiles/SecondPart.dir/SystemManager.cpp.o -c "/Users/Kenny/Documents/ProyectoEstru2 2/ProyectoEstru2KennyMenjivarPrimerAvance/SegundaParte/SystemManager.cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/Users/Kenny/Documents/ProyectoEstru2 2/ProyectoEstru2KennyMenjivarPrimerAvance/SegundaParte/Estructura2ProjectoFinal/Estructura2ProjectoFinal/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/SecondPart.dir/SystemManager.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SecondPart.dir/SystemManager.cpp.o -MF CMakeFiles/SecondPart.dir/SystemManager.cpp.o.d -o CMakeFiles/SecondPart.dir/SystemManager.cpp.o -c "/Users/Kenny/Documents/ProyectoEstru2 2/ProyectoEstru2KennyMenjivarPrimerAvance/SegundaParte/Estructura2ProjectoFinal/Estructura2ProjectoFinal/SystemManager.cpp"
 
 CMakeFiles/SecondPart.dir/SystemManager.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SecondPart.dir/SystemManager.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Kenny/Documents/ProyectoEstru2 2/ProyectoEstru2KennyMenjivarPrimerAvance/SegundaParte/SystemManager.cpp" > CMakeFiles/SecondPart.dir/SystemManager.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/Kenny/Documents/ProyectoEstru2 2/ProyectoEstru2KennyMenjivarPrimerAvance/SegundaParte/Estructura2ProjectoFinal/Estructura2ProjectoFinal/SystemManager.cpp" > CMakeFiles/SecondPart.dir/SystemManager.cpp.i
 
 CMakeFiles/SecondPart.dir/SystemManager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SecondPart.dir/SystemManager.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Kenny/Documents/ProyectoEstru2 2/ProyectoEstru2KennyMenjivarPrimerAvance/SegundaParte/SystemManager.cpp" -o CMakeFiles/SecondPart.dir/SystemManager.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/Kenny/Documents/ProyectoEstru2 2/ProyectoEstru2KennyMenjivarPrimerAvance/SegundaParte/Estructura2ProjectoFinal/Estructura2ProjectoFinal/SystemManager.cpp" -o CMakeFiles/SecondPart.dir/SystemManager.cpp.s
 
 # Object files for target SecondPart
 SecondPart_OBJECTS = \
@@ -109,7 +109,7 @@ SecondPart: CMakeFiles/SecondPart.dir/Main.cpp.o
 SecondPart: CMakeFiles/SecondPart.dir/SystemManager.cpp.o
 SecondPart: CMakeFiles/SecondPart.dir/build.make
 SecondPart: CMakeFiles/SecondPart.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/Users/Kenny/Documents/ProyectoEstru2 2/ProyectoEstru2KennyMenjivarPrimerAvance/SegundaParte/Build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable SecondPart"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/Users/Kenny/Documents/ProyectoEstru2 2/ProyectoEstru2KennyMenjivarPrimerAvance/SegundaParte/Estructura2ProjectoFinal/Estructura2ProjectoFinal/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable SecondPart"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SecondPart.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -121,6 +121,6 @@ CMakeFiles/SecondPart.dir/clean:
 .PHONY : CMakeFiles/SecondPart.dir/clean
 
 CMakeFiles/SecondPart.dir/depend:
-	cd "/Users/Kenny/Documents/ProyectoEstru2 2/ProyectoEstru2KennyMenjivarPrimerAvance/SegundaParte/Build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/Kenny/Documents/ProyectoEstru2 2/ProyectoEstru2KennyMenjivarPrimerAvance/SegundaParte" "/Users/Kenny/Documents/ProyectoEstru2 2/ProyectoEstru2KennyMenjivarPrimerAvance/SegundaParte" "/Users/Kenny/Documents/ProyectoEstru2 2/ProyectoEstru2KennyMenjivarPrimerAvance/SegundaParte/Build" "/Users/Kenny/Documents/ProyectoEstru2 2/ProyectoEstru2KennyMenjivarPrimerAvance/SegundaParte/Build" "/Users/Kenny/Documents/ProyectoEstru2 2/ProyectoEstru2KennyMenjivarPrimerAvance/SegundaParte/Build/CMakeFiles/SecondPart.dir/DependInfo.cmake" "--color=$(COLOR)"
+	cd "/Users/Kenny/Documents/ProyectoEstru2 2/ProyectoEstru2KennyMenjivarPrimerAvance/SegundaParte/Estructura2ProjectoFinal/Estructura2ProjectoFinal/build" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/Users/Kenny/Documents/ProyectoEstru2 2/ProyectoEstru2KennyMenjivarPrimerAvance/SegundaParte/Estructura2ProjectoFinal/Estructura2ProjectoFinal" "/Users/Kenny/Documents/ProyectoEstru2 2/ProyectoEstru2KennyMenjivarPrimerAvance/SegundaParte/Estructura2ProjectoFinal/Estructura2ProjectoFinal" "/Users/Kenny/Documents/ProyectoEstru2 2/ProyectoEstru2KennyMenjivarPrimerAvance/SegundaParte/Estructura2ProjectoFinal/Estructura2ProjectoFinal/build" "/Users/Kenny/Documents/ProyectoEstru2 2/ProyectoEstru2KennyMenjivarPrimerAvance/SegundaParte/Estructura2ProjectoFinal/Estructura2ProjectoFinal/build" "/Users/Kenny/Documents/ProyectoEstru2 2/ProyectoEstru2KennyMenjivarPrimerAvance/SegundaParte/Estructura2ProjectoFinal/Estructura2ProjectoFinal/build/CMakeFiles/SecondPart.dir/DependInfo.cmake" "--color=$(COLOR)"
 .PHONY : CMakeFiles/SecondPart.dir/depend
 

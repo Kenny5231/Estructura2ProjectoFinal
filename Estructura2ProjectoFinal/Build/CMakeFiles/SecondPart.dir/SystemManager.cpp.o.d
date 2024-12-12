@@ -1,6 +1,6 @@
 CMakeFiles/SecondPart.dir/SystemManager.cpp.o: \
-  /Users/Kenny/Documents/ProyectoEstru2\ 2/ProyectoEstru2KennyMenjivarPrimerAvance/SegundaParte/SystemManager.cpp \
-  /Users/Kenny/Documents/ProyectoEstru2\ 2/ProyectoEstru2KennyMenjivarPrimerAvance/SegundaParte/SystemManager.hpp \
+  /Users/Kenny/Documents/ProyectoEstru2\ 2/ProyectoEstru2KennyMenjivarPrimerAvance/SegundaParte/Estructura2ProjectoFinal/Estructura2ProjectoFinal/SystemManager.cpp \
+  /Users/Kenny/Documents/ProyectoEstru2\ 2/ProyectoEstru2KennyMenjivarPrimerAvance/SegundaParte/Estructura2ProjectoFinal/Estructura2ProjectoFinal/SystemManager.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/string \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk/usr/include/pthread.h \

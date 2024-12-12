@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/Kenny/Documents/ProyectoEstru2 2/ProyectoEstru2KennyMenjivarPrimerAvance/SegundaParte/Main.cpp" "CMakeFiles/SecondPart.dir/Main.cpp.o" "gcc" "CMakeFiles/SecondPart.dir/Main.cpp.o.d"
-  "/Users/Kenny/Documents/ProyectoEstru2 2/ProyectoEstru2KennyMenjivarPrimerAvance/SegundaParte/SystemManager.cpp" "CMakeFiles/SecondPart.dir/SystemManager.cpp.o" "gcc" "CMakeFiles/SecondPart.dir/SystemManager.cpp.o.d"
+  "/Users/Kenny/Documents/ProyectoEstru2 2/ProyectoEstru2KennyMenjivarPrimerAvance/SegundaParte/Estructura2ProjectoFinal/Estructura2ProjectoFinal/Main.cpp" "CMakeFiles/SecondPart.dir/Main.cpp.o" "gcc" "CMakeFiles/SecondPart.dir/Main.cpp.o.d"
+  "/Users/Kenny/Documents/ProyectoEstru2 2/ProyectoEstru2KennyMenjivarPrimerAvance/SegundaParte/Estructura2ProjectoFinal/Estructura2ProjectoFinal/SystemManager.cpp" "CMakeFiles/SecondPart.dir/SystemManager.cpp.o" "gcc" "CMakeFiles/SecondPart.dir/SystemManager.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

@@ -2,6 +2,17 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <cctype>
+
+bool isInteger(const std::size_t& dt) {
+    std::string input=std::to_string(dt);
+    for (char c : input) {
+        if (!std::isdigit(c)) {
+            return false;
+        }
+    }
+    return !input.empty();
+}
 bool iscreate(std::string txt){
     if(txt[0]=='c' && txt[1]=='r' &&txt[2]=='e' && txt[3]=='a' && txt[4]=='t' && txt[5]=='e')
     {
@@ -83,9 +94,12 @@ bool iswrite(std::string txt){
 int main() {
     SystemManager admin;
     if(!admin.OpenDisk()){
-        std::size_t i;
-        std::cout<<"Ingrese el tamaño en bytes de los bloques.\n";
-        std::cin>>i;
+        std::size_t i=0;
+        bool es=false;
+        while(!isInteger(i)){
+            std::cout<<"Ingrese el tamaño en bytes de los bloques.\n";
+            std::cin>>i;
+        }
         if(admin.CreateNewDisk(i)){
             std::cout<<"Se creo un nuevo disco virtual.\n";
             admin.OpenDisk();

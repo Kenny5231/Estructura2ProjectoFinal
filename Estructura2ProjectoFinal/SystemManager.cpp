@@ -278,12 +278,16 @@ std::string SystemManager::showInfoOfDat(std::string archivo) {
                     // Mover el puntero de lectura al bloque correspondiente
                     filename.seekg(offset, std::ios::beg);
 
-                    // Buffer para leer los datos                    
-                    char buffer[1024] = {0};
-                    filename.read(buffer, sizeof(buffer));
+                     // Leer el contenido del bloque
+                std::vector<char> buffer(header.tamañoBlock);
+                filename.read(buffer.data(), buffer.size());
 
-                    // Imprimir el contenido leído
-                    txt+=buffer;
+                // Verificar si se leyó correctamente
+                if (filename.gcount() > 0) {
+                    txt.append(buffer.data(), filename.gcount());
+                } else {
+                    std::cerr << "Error al leer el bloque en offset: " << offset << "\n";
+                }
                 }
                 return txt;
             }
@@ -352,7 +356,6 @@ bool SystemManager::deleteArchivo(std::string txt) {
             Inodos& inodo = superbloque.TablaInodos[i];
             std::string nombreArchivo(inodo.nombre, strnlen(inodo.nombre, sizeof(inodo.nombre)));
             if (nombreArchivo == txt) {
-                // Limpiar nombre
                 for (int j = 0; j < 64; j++) {
                     inodo.nombre[j] = '\0';
                 }
@@ -365,7 +368,6 @@ bool SystemManager::deleteArchivo(std::string txt) {
                     }
                 }
 
-                // Marcar inodo como libre
                 inodo.ocupado = false;
 
                 // Escribir cambios al archivo
@@ -381,14 +383,14 @@ bool SystemManager::deleteArchivo(std::string txt) {
                         filename.write(reinterpret_cast<const char*>(&inodo), sizeof(Inodos));
                     }
                 }
-                return true; // Archivo eliminado con éxito
+                return true; 
             }
         }
         std::cerr << "Error: Archivo no encontrado en la tabla de inodos.\n";
     } else {
         std::cerr << "Error: No se encontró el archivo especificado.\n";
     }
-    return false; // No se pudo eliminar el archivo
+    return false; 
 }
 
 bool SystemManager::copyIn(std::string local, std::string externo)
@@ -441,8 +443,6 @@ bool SystemManager::createnewfile(std::string NombreArchivo)
                 inodo.tamaño = 0;
                 inodo.ocupado = true;
 
-                
-                // Guardar el nuevo inodo en el archivo
                 filename.seekp(sizeof(header) + sizeof(superbloque.block_count) + sizeof(superbloque.block_size) +
                                sizeof(superbloque.max_files) + sizeof(superbloque.used_blocks) +
                                superbloque.free_map.size() * sizeof(std::size_t) +
@@ -452,9 +452,7 @@ bool SystemManager::createnewfile(std::string NombreArchivo)
             }
         }
     
-    
 
-    // Guardar el mapa de bloques actualizado en el archivo
     filename.seekp(sizeof(header) + sizeof(superbloque.block_count) + sizeof(superbloque.block_size) +
                    sizeof(superbloque.max_files) + sizeof(superbloque.used_blocks), std::ios::beg);
     filename.write(reinterpret_cast<const char*>(superbloque.free_map.data()),
